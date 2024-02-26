@@ -1,5 +1,6 @@
 @extends('layout.admin')
-        
+
+@section('page-content')
 <div class="content">
     <div class="square pulse" style="margin-bottom: 50px;">
         <span class="one"></span>
@@ -179,3 +180,4 @@
         font-size: 30px !important;
     }
 </style>
+@endsection

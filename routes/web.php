@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ClientController;
+//Importation Controller Plainte
+use App\Http\Controllers\PlainteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -37,4 +39,7 @@ Route::get('/home', function(){ return view('home'); });
 
 //Route de Deconnection
 Route::get('/logout', [ClientController::class, 'logout']);
+
+// ==================================== //
+Route::get('/plainte', [PlainteController::class, 'index_plainte']);
 

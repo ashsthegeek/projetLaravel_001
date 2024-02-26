@@ -54,6 +54,7 @@ Bonjour {{ session('client')->prenom }}
 
 <body>
   <!-- ======= Sidebar ======= -->
+    @yield('page-content')
   <aside id="sidebar" class="sidebar">
     <a href="/home">
         <p class="text-center"><img src="/backend/assets/img/senegal.png" width="50%">
@@ -79,13 +80,7 @@ Bonjour {{ session('client')->prenom }}
         <ul id="plaintes-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           <li>
             <a href="#">
-              <i class="bi bi-circle"></i><span>Liste des convocations</span>
-            </a>
-          </li>
-
-          <li>
-            <a href="#">
-              <i class="bi bi-circle"></i><span>Accordion</span>
+              <i class="bi bi-circle"></i><span>Liste des plaintes</span>
             </a>
           </li>
         </ul>
@@ -101,12 +96,6 @@ Bonjour {{ session('client')->prenom }}
           <li>
             <a href="#">
               <i class="bi bi-circle"></i><span>Liste des convocations</span>
-            </a>
-          </li>
-
-          <li>
-            <a href="#">
-              <i class="bi bi-circle"></i><span>Accordion</span>
             </a>
           </li>
         </ul>
@@ -168,14 +157,6 @@ Bonjour {{ session('client')->prenom }}
     </ul>
   </aside>
   <!-- FIN DU SIDEBAR-->
-
-  <!-- ======= Footer ======= -->
-   <!-- <footer id="footer" class="footer">
-        <div class="copyright float-right">
-        &copy; Copyright <strong><span>Birama DIOP</span></strong>. All Rights Reserved
-        </div>
-    </footer> -->
-  <!-- End Footer -->
 
   <footer>
     <div class="fixed-bottom text-end p-3">
