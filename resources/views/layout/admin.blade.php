@@ -78,10 +78,11 @@ Bonjour {{ session('client')->prenom }}
         </nav>
 
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
-            <!-- Brand Logo -->
             <!-- Image-->
-            <a href="/home"> <img src="https://cdn-icons-png.flaticon.com/512/317/317300.png" width="30%"
-                    class="center" alt=""></a>
+            <a href="/home"> <img src="/backend/dist/img/senegal.png" width="30%"
+                class="center mt-2" alt="">
+            </a>
+              <h3 class="text-center text-white">IRTSS / ZIG</h3>
             <p style="color:white; text-align:center">Inspection Régionale du Travail et de la Sécurité Sociale
                 de Ziguinchor</p>
             <!-- Sidebar Menu -->
@@ -120,9 +121,48 @@ Bonjour {{ session('client')->prenom }}
                   <p>Ajouter une plainte</p>
                 </a>
               </li>
-
             </ul>
           </li>
+          <!-- FIN PLAINTES -->
+
+          <!-- DEBUT CONVOCATIONS -->
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon bi bi-box-arrow-down-right"></i>
+              <p>
+                LES CONVOCATIONS
+                <i class="fas fa-angle-left right"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="pages/mailbox/mailbox.html" class="nav-link">
+                  <i class="bi bi-arrow-right-short nav-icon"></i>
+                  <p>Liste des convocations</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/mailbox/compose.html" class="nav-link">
+                  <i class="bi bi-arrow-right-short nav-icon"></i>
+                  <p>Ajouter une convocation</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
+          <!-- FIN CONVOCATIONS -->
+
+
+
+
+          <!-- BOUTTON DE DECONNEXION -->
+        <li class="nav-item">
+          <a class="nav-link collapsed" href="/logout">
+            <i class="bi bi-box-arrow-left"></i>
+            <span class= "btn btn-danger">Se deconnecter</span>
+          </a>
+        </li>
+      <!-- FIN BOUTTON DE DECONNEXION -->
         </ul>
       </nav>
             <!-- FIN DU SIDEBAR-->

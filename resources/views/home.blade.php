@@ -1,3 +1,4 @@
+<!-- 
 @extends('layout.admin')
 
 @section('page-content')
@@ -19,7 +20,6 @@
 </div>
   
 
-<!-- Style du Cercle  -->
 <style>
     * {
         margin: 0;
@@ -180,4 +180,5 @@
         font-size: 30px !important;
     }
 </style>
-@endsection
+@endsection 
+-->
