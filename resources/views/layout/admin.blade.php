@@ -1,186 +1,192 @@
 <!--
 Bonjour {{ session('client')->prenom }}
-
 <a href="/logout">Deconnection</a>
-
 <br /> <br />
 -->
 @if (session('status'))
     <a href="/logout"> {{ session('status') }} </a>
 @endif
 
-
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Accueil | IRTSS/ZIG</title>
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
+    <!-- Ionicons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <!-- Tempusdominus Bootstrap 4 -->
+    <link rel="stylesheet" href="/backend/plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
+    <!-- iCheck -->
+    <link rel="stylesheet" href="/backend/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+    <!-- JQVMap -->
+    <link rel="stylesheet" href="/backend/plugins/jqvmap/jqvmap.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="/backend/dist/css/adminlte.min.css">
+    <!-- overlayScrollbars -->
+    <link rel="stylesheet" href="/backend/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <!-- Daterange picker -->
+    <link rel="stylesheet" href="/backend/plugins/daterangepicker/daterangepicker.css">
+    <!-- summernote -->
+    <link rel="stylesheet" href="/backend/plugins/summernote/summernote-bs4.min.css">
 
-  <title>Accueil | IRTSSZIG</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-
-  <!-- Favicons -->
-  <link href="/backend/assets/img/favicon.png" rel="icon">
-  <link href="/backend/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
-  <!-- Link Icon 8 -->
-  
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.gstatic.com" rel="preconnect">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
-  <!-- Vendor CSS Files -->
-  <link href="/backend/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="/backend/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-  <link href="/backend/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-  <link href="/backend/assets/vendor/quill/quill.snow.css" rel="stylesheet">
-  <link href="/backend/assets/vendor/quill/quill.bubble.css" rel="stylesheet">
-  <link href="/backend/assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-  <link href="/backend/assets/vendor/simple-datatables/style.css" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link href="/backend/assets/css/style.css" rel="stylesheet">
-
-  <!-- =======================================================
-  * Template Name: NiceAdmin
-  * Updated: Jan 29 2024 with Bootstrap v5.3.2
-  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+    <!-- LINK DEPENDENCIES -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" />
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css') }} ">
+    <!-- IonIcons -->
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="{{ asset('dist/css/adminlte.min.css')}} ">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="//cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+    <!-- CDN BOOTSTRAP ICON -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 
-<body>
-  <!-- ======= Sidebar ======= -->
-    @yield('page-content')
-  <aside id="sidebar" class="sidebar">
-    <a href="/home">
-        <p class="text-center"><img src="/backend/assets/img/senegal.png" width="50%">
-        </p>
-    </a>
-    <h4 class="text-center">IRTSS / ZIG</h4>
-    <p class="text-center">Inspection Régional du Travail et de la Sécurité Sociale de Ziguinchor</p>
+@yield('page-content')
 
-    <ul class="sidebar-nav" id="sidebar-nav">
-      <li class="nav-item">
-        <a class="nav-link " href="#">
-          <i class="bi bi-grid"></i>
-          <span>Tableau de bord</span>
-        </a>
-      </li>
-      <!-- End Dashboard Nav -->
+<body class="hold-transition sidebar-mini layout-fixed">
+    <div class="wrapper">
+        <!-- Navbar -->
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+            <!-- Left navbar links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                </li>
+            </ul>
 
+            <!-- Right navbar links -->
+            <ul class="navbar-nav ml-auto">
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="fullscreen" href="#" role="button">
+                        <i class="fas fa-expand-arrows-alt"></i>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+            <!-- Brand Logo -->
+            <!-- Image-->
+            <a href="/home"> <img src="https://cdn-icons-png.flaticon.com/512/317/317300.png" width="30%"
+                    class="center" alt=""></a>
+            <p style="color:white; text-align:center">Inspection Régionale du Travail et de la Sécurité Sociale
+                de Ziguinchor</p>
+            <!-- Sidebar Menu -->
+           <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+          <!-- Add icons to the links using the .nav-icon class
+               with font-awesome or any other icon font library -->
+          <li class="nav-item menu-open">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-tachometer-alt"></i>
+              <p>
+                TABLEAU DE BORD
+                <i class=""></i>
+              </p>
+            </a>
+          </li>  
         <!-- DEBUT PLAINTE -->
-    <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#plaintes-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-box-arrow-down-right"></i><span>LES PLAINTES</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="plaintes-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="#">
-              <i class="bi bi-circle"></i><span>Liste des plaintes</span>
+          <li class="nav-item">
+            <a href="#" class="nav-link">
+              <i class="nav-icon bi bi-box-arrow-down-right"></i>
+              <p>
+                LES PLAINTES
+                <i class="fas fa-angle-left right"></i>
+              </p>
             </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="pages/mailbox/mailbox.html" class="nav-link">
+                  <i class="bi bi-arrow-right-short nav-icon"></i>
+                  <p>Liste des plaintes</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="pages/mailbox/compose.html" class="nav-link">
+                  <i class="bi bi-arrow-right-short nav-icon"></i>
+                  <p>Ajouter une plainte</p>
+                </a>
+              </li>
+
+            </ul>
           </li>
         </ul>
-      </li>
-      <!-- FIN PLAINTES -->
+      </nav>
+            <!-- FIN DU SIDEBAR-->
+        </aside>
 
-      <!-- DEBUT CONVOCATIONS -->
-    <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#convocations-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-calendar-check"></i><span>LES CONVOCATIONS</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="convocations-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="#">
-              <i class="bi bi-circle"></i><span>Liste des convocations</span>
-            </a>
-          </li>
-        </ul>
-      </li>
-      <!-- FIN CONVOCATON -->
-
-      <!-- DEBUT REGLEMENT DU LITIGE -->
-    <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#litige-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-book-half"></i><span>REGLEMENT DU LITIGE</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="litige-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="#">
-              <i class="bi bi-circle"></i><span>Liste des convocations</span>
-            </a>
-          </li>
-
-          <li>
-            <a href="#">
-              <i class="bi bi-circle"></i><span>Accordion</span>
-            </a>
-          </li>
-        </ul>
-      </li>
-        <!-- FIN REGLEMENT DU LITIGE -->
-
-        <!-- DEBUT TRANSMISSION AU TRIBUNAL -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" data-bs-target="#transmissions-nav" data-bs-toggle="collapse" href="#">
-          <i class="bi bi-arrow-up-circle-fill"></i><span>TRANSMISSIONS</span><i class="bi bi-chevron-down ms-auto"></i>
-        </a>
-        <ul id="transmissions-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
-          <li>
-            <a href="#">
-              <i class="bi bi-circle"></i><span>Liste des procés Verbal</span>
-            </a>
-          </li>
-          
-          <li>
-            <a href="#">
-              <i class="bi bi-circle"></i><span>Liste des procés Verbal</span>
-            </a>
-          </li>
-
-        </ul>
-      </li>
-
-      <!-- FIN TRANSMISSION AU TRIBUNAL -->
-
-      <!-- BOUTTON DE DECONNEXION -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="/logout">
-          <i class="bi bi-box-arrow-left"></i>
-          <span class= "btn btn-danger">Se deconnecter</span>
-        </a>
-      </li>
-      <!-- FIN BOUTTON DE DECONNEXION -->
-    </ul>
-  </aside>
-  <!-- FIN DU SIDEBAR-->
-
-  <footer>
-    <div class="fixed-bottom text-end p-3">
-        © 2024 Copyright :
-        <a class="text-black" href="https://github.com/ashsthegeek"> Birama DIOP</a>
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper" style="background-color:white">
+        </div>
+        <!-- DEBUT DU FOOTER -->
+        <footer class="main-footer">
+          <strong>Copyright &copy; 2024 <a href="https://github.com/ashsthegeek">Birama DIOP</a>.</strong>
+            <div class="float-right d-none d-sm-inline-block">
+            <b>Version</b> 0.0.1
+            </div>
+        </footer>
+        <!-- jQuery -->
+        <script src="/backend/plugins/jquery/jquery.min.js"></script>
+        <!-- jQuery UI 1.11.4 -->
+        <script src="/backend/plugins/jquery-ui/jquery-ui.min.js"></script>
+        <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+        <script>
+            $.widget.bridge('uibutton', $.ui.button)
+        </script>
+        <!-- Bootstrap 4 -->
+        <script src="/backend/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <!-- ChartJS -->
+        <script src="/backend/plugins/chart.js/Chart.min.js"></script>
+        <!-- Sparkline -->
+        <script src="/backend/plugins/sparklines/sparkline.js"></script>
+        <!-- JQVMap -->
+        <script src="/backend/plugins/jqvmap/jquery.vmap.min.js"></script>
+        <script src="/backend/plugins/jqvmap/maps/jquery.vmap.usa.js"></script>
+        <!-- jQuery Knob Chart -->
+        <script src="/backend/plugins/jquery-knob/jquery.knob.min.js"></script>
+        <!-- daterangepicker -->
+        <script src="/backend/plugins/moment/moment.min.js"></script>
+        <script src="/backend/plugins/daterangepicker/daterangepicker.js"></script>
+        <!-- Tempusdominus Bootstrap 4 -->
+        <script src="/backend/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+        <!-- Summernote -->
+        <script src="/backend/plugins/summernote/summernote-bs4.min.js"></script>
+        <!-- overlayScrollbars -->
+        <script src="/backend/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+        <!-- AdminLTE App -->
+        <script src="/backend/dist/js/adminlte.js"></script>
+        <!-- AdminLTE for demo purposes -->
+        <script src="/backend/dist/js/demo.js"></script>
+        <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+        <script src="/backend/dist/js/pages/dashboard.js"></script>
     </div>
-  </footer>
 
-
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
-
-  <!-- Vendor JS Files -->
-  <script src="/backend/assets/vendor/apexcharts/apexcharts.min.js"></script>
-  <script src="/backend/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="/backend/assets/vendor/chart.js/chart.umd.js"></script>
-  <script src="/backend/assets/vendor/echarts/echarts.min.js"></script>
-  <script src="/backend/assets/vendor/quill/quill.min.js"></script>
-  <script src="/backend/assets/vendor/simple-datatables/simple-datatables.js"></script>
-  <script src="/backend/assets/vendor/tinymce/tinymce.min.js"></script>
-  <script src="/backend/assets/vendor/php-email-form/validate.js"></script>
-
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
-
+    <style>
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 65px;
+        }
+        nav, ul, li {
+          list-style-type: none;
+          padding: 5px;
+        }
+        
+    </style>
 </body>
 
 </html>
