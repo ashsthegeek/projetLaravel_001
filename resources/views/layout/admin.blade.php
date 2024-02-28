@@ -76,7 +76,7 @@ Bonjour {{ session('client')->prenom }}
         </nav>
 
         @yield('page-content')
-        
+           
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Image-->
             <a href="/home"> <img src="/backend/dist/img/senegal.png" width="30%"
@@ -101,7 +101,7 @@ Bonjour {{ session('client')->prenom }}
           </li>  
         <!-- DEBUT PLAINTE -->
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="" class="nav-link">
               <i class="nav-icon bi bi-box-arrow-down-right"></i>
               <p>
                 LES PLAINTES
@@ -110,7 +110,7 @@ Bonjour {{ session('client')->prenom }}
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/plainte" class="nav-link">
+                <a href="/plainte.create" class="nav-link">
                   <i class="bi bi-arrow-right-short nav-icon"></i>
                   <p>Liste des plaintes</p>
                 </a>

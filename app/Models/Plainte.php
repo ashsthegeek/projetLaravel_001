@@ -7,5 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Plainte extends Model
 {
-    use HasFactory;
+    // use HasFactory;
+    protected $primarykey = 'plainte_id';
+    protected $fillable = [
+        'prenom',
+        'nom',
+        'genre_plaignant',
+        'tel_plaignant',
+        'date_depot',
+        'date_convocation',
+        'date_seance',
+    ];
 }

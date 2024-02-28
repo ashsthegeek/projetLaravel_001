@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('plaintes', function (Blueprint $table) {
             $table->id();
+            $table->string('prenom');
+            $table->string('nom');
+            $table->string('genre_plaignant');
+            $table->string('tel_plaignant');
+            $table->date('date_depot');
+            $table->date('date_convocation');
+            $table->date('date_seance');
             $table->timestamps();
         });
     }
