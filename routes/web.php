@@ -41,6 +41,6 @@ Route::get('/home', function(){ return view('home'); });
 //Route de Deconnection
 Route::get('/logout', [ClientController::class, 'logout']);
 
+
 // ROUTE PLAINTES //
-Route::resource('plainte', PlainteController::class);
 

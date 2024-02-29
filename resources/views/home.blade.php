@@ -1,5 +1,4 @@
-<!-- 
-@extends('layout.admin')
+ @extends('layout.admin')
 
 @section('page-content')
 <div class="content">
@@ -181,4 +180,3 @@
     }
 </style>
 @endsection 
--->
