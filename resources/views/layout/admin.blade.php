@@ -110,13 +110,13 @@ Bonjour {{ session('client')->prenom }}
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="/plainte.create" class="nav-link">
+                <a href="" class="nav-link">
                   <i class="bi bi-arrow-right-short nav-icon"></i>
                   <p>Liste des plaintes</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/mailbox/compose.html" class="nav-link">
+                <a href="" class="nav-link">
                   <i class="bi bi-arrow-right-short nav-icon"></i>
                   <p>Ajouter une plainte</p>
                 </a>

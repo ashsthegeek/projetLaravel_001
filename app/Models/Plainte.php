@@ -7,8 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Plainte extends Model
 {
-    // use HasFactory;
-    protected $primarykey = 'plainte_id';
+    use HasFactory;
+
     protected $fillable = [
         'prenom',
         'nom',
