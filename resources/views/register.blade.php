@@ -36,6 +36,6 @@
         <!-- copyright-->
         <div class="copyright text-center">
             <p class="copy-footer-29">© 2024 | Design by <a
-                        href="https://github.com/ashsthegeek">Birama DIOP</a></p>
+                href="https://github.com/ashsthegeek">Birama DIOP</a></p>
         </div>
 @endsection

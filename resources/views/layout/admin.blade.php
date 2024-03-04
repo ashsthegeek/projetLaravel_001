@@ -3,9 +3,10 @@ Bonjour {{ session('client')->prenom }}
 <a href="/logout">Deconnection</a>
 <br /> <br />
 -->
-@if (session('status'))
-    <a href="/logout"> {{ session('status') }} </a>
-@endif
+  @if (session('status'))
+    <p class="text-center text-danger">{{ session('status') }}</p>
+  @endif
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -110,13 +111,13 @@ Bonjour {{ session('client')->prenom }}
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="" class="nav-link">
+                <a href="{{ route('plainte') }}" class="nav-link">
                   <i class="bi bi-arrow-right-short nav-icon"></i>
                   <p>Liste des plaintes</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="" class="nav-link">
+                <a href="{{ route('ajouter_plainte') }}" class="nav-link">
                   <i class="bi bi-arrow-right-short nav-icon"></i>
                   <p>Ajouter une plainte</p>
                 </a>

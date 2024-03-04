@@ -25,9 +25,13 @@ class PlainteController extends Controller
             'nom' => 'required',
             'genre_plaignant' => 'required',
             'tel_plaignant' => 'required',
+            'objet_plainte' => 'required',
+            'nom_entreprise' => 'required',
+            'fonction' => 'required',
             'date_depot' => 'required',
             'date_convocation' => 'required',
             'date_seance' => 'required',
+            'pj_plainte' => 'nullable',
         ]);
 
         $plainte = new Plainte();
@@ -35,9 +39,13 @@ class PlainteController extends Controller
         $plainte->nom = $request->nom;
         $plainte->genre_plaignant = $request->genre_plaignant;
         $plainte->tel_plaignant = $request->tel_plaignant;
+        $plainte->objet_plainte = $request->objet_plainte;
+        $plainte->nom_entreprise = $request->nom_entreprise;
+        $plainte->fonction = $request->fonction;
         $plainte->date_depot = $request->date_depot;
         $plainte->date_convocation = $request->date_convocation;
         $plainte->date_seance = $request->date_seance;
+        $plainte->pj_plainte = $request->pj_plainte;
 
         $plainte->save();
 

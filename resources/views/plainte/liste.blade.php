@@ -25,6 +25,7 @@
 						<th>Prénom Nom</th>
                         <th>Genre</th>
 						<th>Contact</th>
+						<th>Objet plainte</th>
 						<th>Date depôt</th>
 						<th>Action</th>
                     </tr>
@@ -36,6 +37,7 @@
 						<td>{{ $plainte->prenom }} {{ $plainte->nom }}</td>
                         <td>{{ $plainte->genre_plaignant }}</td>
 						<td>{{ $plainte->tel_plaignant }}</td>
+						<td>{{ $plainte->objet_plainte }}</td>
 						<td>{{Carbon\Carbon::parse($plainte->updated_at)->format('d-m-Y')}}</td>
 						<td>
 							<a href=""><i class="fa fa-edit" style="color: #d18b0b"></i></a>
@@ -101,7 +103,7 @@
 		margin-top: 2px;
 	}
     table.table tr th, table.table tr td {
-        border-color: rgb(5, 68, 104);
+        border-color: #343a40;
 		padding: 12px 15px;
 		vertical-align: middle;
     }

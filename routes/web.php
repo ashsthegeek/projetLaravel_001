@@ -43,6 +43,6 @@ Route::get('/logout', [ClientController::class, 'logout']);
 
 
 // ROUTE PLAINTES //
-Route::get('/plainte', [PlainteController::class, 'liste_plainte']);
-Route::get('/ajouter', [PlainteController::class, 'ajouter_plainte']);
+Route::get('/plainte', [PlainteController::class, 'liste_plainte'])->name('plainte');
+Route::get('/ajouter', [PlainteController::class, 'ajouter_plainte'])->name('ajouter_plainte');
 Route::post('/ajouter/traitement', [PlainteController::class, 'ajouter_plainte_traitement']);

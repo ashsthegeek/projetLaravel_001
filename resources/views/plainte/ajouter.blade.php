@@ -3,21 +3,22 @@
 @section('page-content')
 
 <div class="container mt-5">
-        @if (session()->has('success'))
-        <div class="alert alert-success">{{ session()->get('success') }}</div>  
-        @endif
-
-        <ul>
-            @foreach ($errors->all() as $error)
-            <li class="alert alert-danger"> {{ $error }} </li>
-            @endforeach
-        </ul>
         
-
     <div class="row justify-content-center">
         <div class="col-md-6">
-        
-        
+
+                <div class="text-center">
+                    @if (session()->has('success'))
+                    <div class="alert alert-success">{{ session()->get('success') }}</div>  
+                    @endif
+                </div>
+
+                <ul>
+                    @foreach ($errors->all() as $error)
+                    <li class="alert alert-danger"> {{ $error }} </li>
+                    @endforeach
+                </ul>
+
             <form method="POST" action="/ajouter/traitement" class="border rounded p-4">
 
                 @csrf
@@ -65,6 +66,40 @@
                         required>
                 </div>
 
+                <div class="mb-3">
+                    <label for="nom" class="form-label">Objet de la plainte</label>
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        id="objet-plainte" 
+                        placeholder="Quel est l'objet de votre plainte ?"
+                        name="objet_plainte"
+                        required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="nom" class="form-label">Nom de l'Entreprise</label>
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        id="nom-entreprise" 
+                        placeholder="Saisissez le nom de l'entreprise"
+                        name="nom_entreprise"
+                        required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="nom" class="form-label">Votre fonction dans l'Entreprise</label>
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        id="fonction" 
+                        placeholder="Quelle est votre fonction dans l'Entreprise?"
+                        name="fonction"
+                        required>
+                </div>
+
+
                 <div class="row mb-3">
                     <div class="col-md-6">
                         <label for="date_depot" class="form-label">Date dépôt</label>
@@ -98,6 +133,15 @@
                         placeholder=""
                         name="date_seance"
                         required>
+                </div>
+
+                <div class="mb-3">
+                    <label for="customFile" class="form-label">Piéce-jointe de la plainte</label>
+                    <input 
+                        type="file" 
+                        class="form-control" 
+                        id="pj-plainte" 
+                        name="pj-plainte">
                 </div>
 
                 <button type="submit" class="btn btn-primary">Enregistrer</button>
