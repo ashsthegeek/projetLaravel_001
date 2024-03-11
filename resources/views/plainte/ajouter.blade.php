@@ -7,6 +7,7 @@
         @endif -->
 
         <div class="formbold-form-wrapper mt-5 mb-5">
+
         <ul>
             @foreach ($errors->all() as $error)
             <li class="alert alert-succes"> {{ $error }} </li>
@@ -51,11 +52,11 @@
         <div class="formbold-input-flex">
 
             <div>
-                <label class="formbold-form-label">GENRE</label>
-                <select class="formbold-form-input" name="genre_plaignant" id="" required>
+                <label class="formbold-form-label">SEXE</label>
+                <select class="formbold-form-input" name="sexe_plaignant" id="" required>
                 <option value=""></option>
-                <option value="male">Homme</option>
-                <option value="female">Femme</option>
+                <option value="homme">Homme</option>
+                <option value="femme">Femme</option>
                 </select>
             </div>
 
@@ -86,7 +87,7 @@
               />
             </div>
             <div>
-              <label for="nom_entreprise" class="formbold-form-label"> RAISON SOCIAL </label>
+              <label for="nom_entreprise" class="formbold-form-label"> ENTREPRISE </label>
               <input
                 type="text"
                 name="nom_entreprise"
@@ -95,13 +96,25 @@
                 required
               />
             </div>
-            </div>
+        </div>
 
         <!-- FONCTION DANS L'ENTREPRISE -->
-        <div class="formbold-input">
+        <div class="formbold-input-flex">
+            <div>
+              <label for="secteur_activite" class="formbold-form-label">
+                SECTEUR D'ACTIVITE
+              </label>
+              <input
+                type="text"
+                name="secteur_activite"
+                id=""
+                class="formbold-form-input"
+                required
+              />
+            </div>
             <div>
               <label for="objet_plainte" class="formbold-form-label">
-                FONCTION DANS L'ENTREPRISE
+                EMPLOI TENU
               </label>
               <input
                 type="text"
@@ -115,6 +128,20 @@
         
         <!-- DATE DEPOT & DATE CONVOCATION -->
         <div class="formbold-input-flex">
+
+        <div>
+              <label for="" class="formbold-form-label">
+                DEPARTEMENT
+              </label>
+              <input
+                type="text"
+                name="departement"
+                id="firstname"
+                class="formbold-form-input"
+                required
+              />
+            </div>
+
             <div>
                 <label for="date_depot" class="formbold-form-label"> DATE DEPOT </label>
                 <input 
@@ -125,8 +152,11 @@
                 required
                 />
             </div>
-
-            <div>
+          </div>
+        
+        <!-- DATE SEANCE -->
+        <div class="formbold-input-flex">
+          <div>
                 <label for="date_convocation" class="formbold-form-label"> DATE CONVOCATION </label>
                 <input 
                 type="date" 
@@ -136,11 +166,7 @@
                 required
                 />
             </div>
-            
-          </div>
-        
-        <!-- DATE SEANCE -->
-        <div class="formbold-input">
+
             <div>
                 <label for="date_seance" class="formbold-form-label"> DATE SEANCE </label>
                 <input 
@@ -154,19 +180,6 @@
         </div>
 
         <!-- PJ DE LA CONVOCATION -->
-        <div class="formbold-input-flex">
-            <div>
-                <label for="pj_plainte" class="formbold-form-label"> PJ DE LA PLAINTE </label>
-                <input 
-                type="file" 
-                name="pj_plainte" 
-                id="" 
-                class="formbold-form-input"
-                required
-                />
-            </div>
-        </div>
-
         <button  type="submit" class="formbold-btn centre">ENREGISTRER</button>
       </form>
     </div>
@@ -270,7 +283,7 @@
   }
   .formbold-form-label {
     color: #343a40;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 24px;
     display: block;
     margin-bottom: 10px;
@@ -280,7 +293,7 @@
     display: flex;
     cursor: pointer;
     user-select: none;
-    font-size: 16px;
+    font-size: 14px;
     line-height: 24px;
     color: #536387;
   }

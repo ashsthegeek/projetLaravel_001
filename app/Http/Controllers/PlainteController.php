@@ -23,29 +23,31 @@ class PlainteController extends Controller
         $request->validate([
             'prenom' => 'required',
             'nom' => 'required',
-            'genre_plaignant' => 'required',
+            'sexe_plaignant' => 'required',
             'tel_plaignant' => 'required',
             'objet_plainte' => 'required',
             'nom_entreprise' => 'required',
+            'secteur_activite' => 'required',
             'fonction' => 'required',
+            'departement' => 'required',
             'date_depot' => 'required',
             'date_convocation' => 'required',
             'date_seance' => 'required',
-            'pj_plainte' => 'nullable|file|mimes:pdf,doc,docx|max:2048',
         ]);
 
         $plainte = new Plainte();
         $plainte->prenom = $request->prenom;
         $plainte->nom = $request->nom;
-        $plainte->genre_plaignant = $request->genre_plaignant;
+        $plainte->sexe_plaignant = $request->sexe_plaignant;
         $plainte->tel_plaignant = $request->tel_plaignant;
         $plainte->objet_plainte = $request->objet_plainte;
         $plainte->nom_entreprise = $request->nom_entreprise;
+        $plainte->secteur_activite = $request->secteur_activite;
         $plainte->fonction = $request->fonction;
+        $plainte->departement = $request->departement;
         $plainte->date_depot = $request->date_depot;
         $plainte->date_convocation = $request->date_convocation;
         $plainte->date_seance = $request->date_seance;
-        $plainte->pj_plainte = $request->pj_plainte;
 
         $plainte->save();
 
@@ -64,29 +66,31 @@ class PlainteController extends Controller
         $request->validate([
             'prenom' => 'required',
             'nom' => 'required',
-            'genre_plaignant' => 'required',
+            'sexe_plaignant' => 'required',
             'tel_plaignant' => 'required',
             'objet_plainte' => 'required',
             'nom_entreprise' => 'required',
+            'secteur_activite' => 'required',
             'fonction' => 'required',
+            'departement' => 'required',
             'date_depot' => 'required',
             'date_convocation' => 'required',
             'date_seance' => 'required',
-            'pj_plainte' => 'nullable',
         ]);
 
         $plainte = Plainte::find($request->id);
         $plainte->prenom = $request->prenom;
         $plainte->nom = $request->nom;
-        $plainte->genre_plaignant = $request->genre_plaignant;
+        $plainte->sexe_plaignant = $request->sexe_plaignant;
         $plainte->tel_plaignant = $request->tel_plaignant;
         $plainte->objet_plainte = $request->objet_plainte;
         $plainte->nom_entreprise = $request->nom_entreprise;
+        $plainte->secteur_activite = $request->secteur_activite;
         $plainte->fonction = $request->fonction;
+        $plainte->departement = $request->departement;
         $plainte->date_depot = $request->date_depot;
         $plainte->date_convocation = $request->date_convocation;
         $plainte->date_seance = $request->date_seance;
-        $plainte->pj_plainte = $request->pj_plainte;
 
         $plainte->update();
 
