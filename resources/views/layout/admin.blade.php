@@ -75,8 +75,6 @@ Bonjour {{ session('client')->prenom }}
                 </li>
             </ul>
         </nav>
-
-        @yield('page-content')
            
         <aside class="main-sidebar sidebar-dark-primary elevation-4">
             <!-- Image-->
@@ -102,14 +100,14 @@ Bonjour {{ session('client')->prenom }}
           </li>  
         <!-- DEBUT PLAINTE -->
           <li class="nav-item">
-            <a href="" class="nav-link">
-              <i class="nav-icon bi bi-box-arrow-down-right"></i>
+            <a href=" {{ route('plainte') }} " class="nav-link">
+              <i class="nav-icon bi bi-envelope-paper-fill"></i>
               <p>
                 LES PLAINTES
-                <i class="fas fa-angle-left right"></i>
+                <i class=""></i>
               </p>
             </a>
-            <ul class="nav nav-treeview">
+            <!-- <ul class="nav nav-treeview">
               <li class="nav-item">
                 <a href="{{ route('plainte') }}" class="nav-link">
                   <i class="bi bi-arrow-right-short nav-icon"></i>
@@ -122,14 +120,14 @@ Bonjour {{ session('client')->prenom }}
                   <p>Ajouter une plainte</p>
                 </a>
               </li>
-            </ul>
+            </ul> -->
           </li>
           <!-- FIN PLAINTES -->
 
           <!-- DEBUT CONVOCATIONS -->
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon bi bi-box-arrow-down-right"></i>
+              <i class="nav-icon bi bi-calendar-date"></i>
               <p>
                 LES CONVOCATIONS
                 <i class="fas fa-angle-left right"></i>
@@ -171,6 +169,9 @@ Bonjour {{ session('client')->prenom }}
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper" style="background-color:white">
+
+        @yield('page-content')
+        
         </div>
         <!-- DEBUT DU FOOTER -->
         <footer class="main-footer">

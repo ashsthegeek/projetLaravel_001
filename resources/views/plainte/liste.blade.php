@@ -2,7 +2,14 @@
 
 @section('page-content')
 
+		<!-- @if (session()->has('success'))
+            <div class="alert alert-success">{{ session()->get('success') }}</div>  
+        @endif	 -->
+
   <div class="container mt-5 mx-auto">
+  		@if (session()->has('success'))
+            <div class="alert alert-success">{{ session()->get('success') }}</div>  
+        @endif
         <!-- <div class="alert alert-success"></div> -->
         <div class="table-wrapper">
             <div class="table-title">
@@ -18,7 +25,7 @@
             </div>
             <div class="input-group">
             </div>
-  
+
             <table class="table table-striped table-hover" id="myTable">
                     <thead>
                     <tr>
@@ -27,6 +34,7 @@
 						<th>Contact</th>
 						<th>Objet plainte</th>
 						<th>Date depôt</th>
+						<!-- <th>Agent en charge du dossier</th> -->
 						<th>Action</th>
                     </tr>
                 </thead>
@@ -39,9 +47,10 @@
 						<td>{{ $plainte->tel_plaignant }}</td>
 						<td>{{ $plainte->objet_plainte }}</td>
 						<td>{{Carbon\Carbon::parse($plainte->updated_at)->format('d-m-Y')}}</td>
+						<!-- <td>{{ session('client')->prenom .' ' . session('client')->nom }}</td> -->
 						<td>
-							<a href=""><i class="fa fa-edit" style="color: #d18b0b"></i></a>
-                            <a href=""><i class="fa fa-trash" aria-hidden="true" style="color: #dd4040"></i></a>
+							<a href="/update-plainte/{{ $plainte->id }}"><i class="fa fa-edit" style="color: #d18b0b"></i></a>
+                            <a href="/delete-plainte/{{ $plainte->id }}"><i class="fa fa-trash" aria-hidden="true" style="color: #dd4040"></i></a>
 						</td>
                     </tr>  
 				@endforeach                 					

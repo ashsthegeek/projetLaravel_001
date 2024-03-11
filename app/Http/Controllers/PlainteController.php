@@ -31,7 +31,7 @@ class PlainteController extends Controller
             'date_depot' => 'required',
             'date_convocation' => 'required',
             'date_seance' => 'required',
-            'pj_plainte' => 'nullable',
+            'pj_plainte' => 'nullable|file|mimes:pdf,doc,docx|max:2048',
         ]);
 
         $plainte = new Plainte();
@@ -49,6 +49,54 @@ class PlainteController extends Controller
 
         $plainte->save();
 
-        return redirect('/ajouter')->with('status', 'La plainte a été bien ajouté avec succés !');
+        return redirect('/plainte')->with('status', 'La plainte a été bien ajouté avec succés !');
+    }
+
+    public function update_plainte($id)
+    {
+        $plainte = Plainte::find($id);
+
+        return view('plainte.update', compact('plainte'));
+    }
+
+    public function update_plainte_traitement(Request $request)
+    {
+        $request->validate([
+            'prenom' => 'required',
+            'nom' => 'required',
+            'genre_plaignant' => 'required',
+            'tel_plaignant' => 'required',
+            'objet_plainte' => 'required',
+            'nom_entreprise' => 'required',
+            'fonction' => 'required',
+            'date_depot' => 'required',
+            'date_convocation' => 'required',
+            'date_seance' => 'required',
+            'pj_plainte' => 'nullable',
+        ]);
+
+        $plainte = Plainte::find($request->id);
+        $plainte->prenom = $request->prenom;
+        $plainte->nom = $request->nom;
+        $plainte->genre_plaignant = $request->genre_plaignant;
+        $plainte->tel_plaignant = $request->tel_plaignant;
+        $plainte->objet_plainte = $request->objet_plainte;
+        $plainte->nom_entreprise = $request->nom_entreprise;
+        $plainte->fonction = $request->fonction;
+        $plainte->date_depot = $request->date_depot;
+        $plainte->date_convocation = $request->date_convocation;
+        $plainte->date_seance = $request->date_seance;
+        $plainte->pj_plainte = $request->pj_plainte;
+
+        $plainte->update();
+
+        return redirect('/plainte')->with('status', 'La plainte a été bien modifiée avec succés !');
+    }
+
+    public function delete_plainte($id)
+    {
+        $plainte = Plainte::find($id);
+        $plainte->delete();
+        return redirect('/plainte')->with('status', 'La plainte a été bien supprimée avec succés !');
     }
 }

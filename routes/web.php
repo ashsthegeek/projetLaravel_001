@@ -43,6 +43,9 @@ Route::get('/logout', [ClientController::class, 'logout']);
 
 
 // ROUTE PLAINTES //
+Route::get('/delete-plainte/{id}', [PlainteController::class, 'delete_plainte'])->name('plainte');
+Route::get('/update-plainte/{id}', [PlainteController::class, 'update_plainte'])->name('plainte');
+Route::post('/update/traitement', [PlainteController::class, 'update_plainte_traitement']);
 Route::get('/plainte', [PlainteController::class, 'liste_plainte'])->name('plainte');
 Route::get('/ajouter', [PlainteController::class, 'ajouter_plainte'])->name('ajouter_plainte');
 Route::post('/ajouter/traitement', [PlainteController::class, 'ajouter_plainte_traitement']);
