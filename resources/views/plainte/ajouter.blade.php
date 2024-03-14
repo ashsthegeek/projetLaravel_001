@@ -1,12 +1,14 @@
 @extends('layout.admin')
 
 @section('page-content')
-
-        <!-- @if (session()->has('success'))
-            <div class="alert alert-success">{{ session()->get('success') }}</div>  
-        @endif -->
-
+ 
         <div class="formbold-form-wrapper mt-5 mb-5">
+
+        <div class="container">
+            @if (session()->has('success'))
+              <div class="alert alert-success">{{ session()->get('success') }}</div>  
+            @endif
+		    </div>
 
         <ul>
             @foreach ($errors->all() as $error)
@@ -55,8 +57,8 @@
                 <label class="formbold-form-label">SEXE</label>
                 <select class="formbold-form-input" name="sexe_plaignant" id="" required>
                 <option value=""></option>
-                <option value="homme">Homme</option>
-                <option value="femme">Femme</option>
+                <option value="Homme">Homme</option>
+                <option value="Femme">Femme</option>
                 </select>
             </div>
 

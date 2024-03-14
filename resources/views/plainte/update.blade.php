@@ -8,6 +8,12 @@
 
         <div class="formbold-form-wrapper mt-5 mb-5">
 
+          <div class="container">
+            @if (session()->has('success'))
+              <div class="alert alert-success">{{ session()->get('success') }}</div>  
+            @endif
+          </div>
+
         <ul>
             @foreach ($errors->all() as $error)
             <li class="alert alert-succes"> {{ $error }} </li>
@@ -54,28 +60,29 @@
         <!-- GENRE ET TELEPHONE -->
         <div class="formbold-input-flex">
 
-        <div>
-            <label for="sexe_plaignant" class="formbold-form-label">SEXE</label>
-            <select class="formbold-form-input" name="sexe_plaignant" id="sexe_plaignant" required>
-                <option value="" {{ $plainte->sexe_plaignant == '' ? 'selected' : '' }}></option>
-                <option value="Homme" {{ $plainte->sexe_plaignant == 'Homme' ? 'selected' : '' }}>Homme</option>
-                <option value="Femme" {{ $plainte->sexe_plaignant == 'Femme' ? 'selected' : '' }}>Femme</option>
-            </select>
-        </div>
+          <div>
+              <label for="sexe_plaignant" class="formbold-form-label">SEXE</label>
+              <select class="formbold-form-input" name="sexe_plaignant" id="sexe_plaignant" required>
+                  <option value="" {{ $plainte->sexe_plaignant == '' ? 'selected' : '' }}></option>
+                  <option value="Homme" {{ $plainte->sexe_plaignant == 'Homme' ? 'selected' : '' }}>Homme</option>
+                  <option value="Femme" {{ $plainte->sexe_plaignant == 'Femme' ? 'selected' : '' }}>Femme</option>
+              </select>
+          </div>
 
 
-            <div>
-              <label for="tel_plaignant" class="formbold-form-label"> TELEPHONE </label>
-              <input
+          <div>
+            <label for="tel_plaignant" class="formbold-form-label"> TELEPHONE </label>
+            <input
                 type="tel"
                 name="tel_plaignant"
                 id=""
                 class="formbold-form-input"
                 value="{{ $plainte->tel_plaignant }}"
                 required
-              />
+            />
             </div>
-          </div>
+
+        </div>
 
         <!-- OBJET ET RAISON SOCIAL -->
         <div class="formbold-input-flex">
@@ -193,7 +200,7 @@
         </div>
 
         <!-- PJ DE LA CONVOCATION -->
-        <button  type="submit" class="formbold-btn centre">METTRE A JOURS</button>
+        <button  type="submit" class="formbold-btn centre">METTRE A JOUR</button>
       </form>
     </div>
   </div>

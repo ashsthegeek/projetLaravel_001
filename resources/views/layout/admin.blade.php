@@ -3,11 +3,6 @@ Bonjour {{ session('client')->prenom }}
 <a href="/logout">Deconnection</a>
 <br /> <br />
 -->
-  @if (session('status'))
-    <p class="text-center text-danger">{{ session('status') }}</p>
-  @endif
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -151,8 +146,29 @@ Bonjour {{ session('client')->prenom }}
 
           <!-- FIN CONVOCATIONS -->
 
+          <!-- REGLEMENT LITIGE -->
+        <li class="nav-item">
+            <a href="" class="nav-link">
+              <i class="nav-icon bi bi-chat-right-text"></i>
+              <p>
+                REGLEMENT DU LITIGE
+              <i class=""></i>
+              </p>
+            </a>
+        </li>
+        <!-- FIN REGLEMENT LITIGE -->
 
-
+        <!-- TRANSMISSION DU TRIBUNAL -->
+        <li class="nav-item">
+            <a href="" class="nav-link">
+              <i class="nav-icon bi bi-bank"></i>
+              <p>
+                TRANSMISSION AU TRIBUNAL
+              <i class=""></i>
+              </p>
+            </a>
+        </li>
+        <!-- FIN TRANSMISSION DU TRIBUNAL -->
 
           <!-- BOUTTON DE DECONNEXION -->
         <li class="nav-item">
@@ -165,10 +181,16 @@ Bonjour {{ session('client')->prenom }}
         </ul>
       </nav>
             <!-- FIN DU SIDEBAR-->
-        </aside>
+      </aside>
+
+      
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper" style="background-color:white">
+
+        @if (session('status'))
+          <p class="alert alert-success">{{ session('status') }}</p>
+        @endif
 
         @yield('page-content')
         

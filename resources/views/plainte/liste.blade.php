@@ -7,10 +7,12 @@
         @endif	 -->
 
   <div class="container mt-5 mx-auto">
-  		@if (session()->has('success'))
-            <div class="alert alert-success">{{ session()->get('success') }}</div>  
-        @endif
         <!-- <div class="alert alert-success"></div> -->
+		<div class="container">
+			@if (session()->has('success'))
+				<div class="alert alert-success">{{ session()->get('success') }}</div>  
+			@endif
+		</div>
         <div class="table-wrapper">
             <div class="table-title">
                 <div class="row">
@@ -30,7 +32,7 @@
                     <thead>
                     <tr>
 						<th>Prénom Nom</th>
-                        <th>Genre</th>
+                        <th>Sexe</th>
 						<th>Contact</th>
 						<th>Objet plainte</th>
 						<th>Date depôt</th>
@@ -43,7 +45,7 @@
 				@foreach($plaintes as $plainte)
                     <tr>
 						<td>{{ $plainte->prenom }} {{ $plainte->nom }}</td>
-                        <td>{{ $plainte->genre_plaignant }}</td>
+                        <td>{{ $plainte->sexe_plaignant }}</td>
 						<td>{{ $plainte->tel_plaignant }}</td>
 						<td>{{ $plainte->objet_plainte }}</td>
 						<td>{{Carbon\Carbon::parse($plainte->updated_at)->format('d-m-Y')}}</td>
