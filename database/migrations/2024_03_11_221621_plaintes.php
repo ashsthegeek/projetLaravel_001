@@ -23,8 +23,8 @@ return new class extends Migration
             $table->text('fonction');
             $table->text('departement');
             $table->date('date_depot');
-            $table->date('date_convocation');
-            $table->date('date_seance'); 
+            $table->date('date_seance');
+            $table->date('date_reglement');
             $table->timestamps();
         });
     }

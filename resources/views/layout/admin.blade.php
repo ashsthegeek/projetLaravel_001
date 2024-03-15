@@ -130,15 +130,15 @@ Bonjour {{ session('client')->prenom }}
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/mailbox/mailbox.html" class="nav-link">
+                <a href=" {{ route('convocation') }} " class="nav-link">
                   <i class="bi bi-arrow-right-short nav-icon"></i>
-                  <p>Liste des convocations</p>
+                  <p>Employeur</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="pages/mailbox/compose.html" class="nav-link">
                   <i class="bi bi-arrow-right-short nav-icon"></i>
-                  <p>Ajouter une convocation</p>
+                  <p>Travailleur</p>
                 </a>
               </li>
             </ul>

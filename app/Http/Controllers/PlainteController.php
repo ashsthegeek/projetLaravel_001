@@ -31,8 +31,8 @@ class PlainteController extends Controller
             'fonction' => 'required',
             'departement' => 'required',
             'date_depot' => 'required',
-            'date_convocation' => 'required',
             'date_seance' => 'required',
+            'date_reglement' => 'required',
         ]);
 
         $plainte = new Plainte();
@@ -46,8 +46,8 @@ class PlainteController extends Controller
         $plainte->fonction = $request->fonction;
         $plainte->departement = $request->departement;
         $plainte->date_depot = $request->date_depot;
-        $plainte->date_convocation = $request->date_convocation;
         $plainte->date_seance = $request->date_seance;
+        $plainte->date_reglement = $request->date_reglement;
 
         $plainte->save();
 
@@ -74,8 +74,8 @@ class PlainteController extends Controller
             'fonction' => 'required',
             'departement' => 'required',
             'date_depot' => 'required',
-            'date_convocation' => 'required',
             'date_seance' => 'required',
+            'date_reglement' => 'required',
         ]);
 
         $plainte = Plainte::find($request->id);
@@ -89,8 +89,8 @@ class PlainteController extends Controller
         $plainte->fonction = $request->fonction;
         $plainte->departement = $request->departement;
         $plainte->date_depot = $request->date_depot;
-        $plainte->date_convocation = $request->date_convocation;
         $plainte->date_seance = $request->date_seance;
+        $plainte->date_reglement = $request->date_reglement;
 
         $plainte->update();
 

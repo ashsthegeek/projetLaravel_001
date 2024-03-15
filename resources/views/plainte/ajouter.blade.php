@@ -132,17 +132,14 @@
         <div class="formbold-input-flex">
 
         <div>
-              <label for="" class="formbold-form-label">
-                DEPARTEMENT
-              </label>
-              <input
-                type="text"
-                name="departement"
-                id="firstname"
-                class="formbold-form-input"
-                required
-              />
-            </div>
+                <label class="formbold-form-label">Departement</label>
+                <select class="formbold-form-input" name="departement" id="" required>
+                <option value=""></option>
+                <option value="Ziguinchor">Ziguinchor</option>
+                <option value="Bignona">Bignona</option>
+                <option value="Oussouye">Oussouye</option>
+                </select>
+        </div>
 
             <div>
                 <label for="date_depot" class="formbold-form-label"> DATE DEPOT </label>
@@ -158,23 +155,24 @@
         
         <!-- DATE SEANCE -->
         <div class="formbold-input-flex">
-          <div>
-                <label for="date_convocation" class="formbold-form-label"> DATE CONVOCATION </label>
-                <input 
-                type="date" 
-                name="date_convocation"
-                id="dob" 
-                class="formbold-form-input"
-                required
-                />
-            </div>
 
-            <div>
+        <div>
                 <label for="date_seance" class="formbold-form-label"> DATE SEANCE </label>
                 <input 
                 type="date" 
                 name="date_seance" 
                 id="" 
+                class="formbold-form-input"
+                required
+                />
+            </div>
+
+          <div>
+                <label for="date_convocation" class="formbold-form-label"> DATE DE REGLEMENT </label>
+                <input 
+                type="date" 
+                name="date_reglement"
+                id="dob" 
                 class="formbold-form-input"
                 required
                 />

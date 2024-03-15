@@ -8,19 +8,19 @@
 
   <div class="container mt-5 mx-auto">
         <!-- <div class="alert alert-success"></div> -->
-		<div class="container">
+		<!-- <div class="container">
 			@if (session()->has('success'))
 				<div class="alert alert-success">{{ session()->get('success') }}</div>  
 			@endif
-		</div>
+		</div> -->
         <div class="table-wrapper">
             <div class="table-title">
                 <div class="row">
                     <div class="col-md-6">
-						<h2><b> REGISTRE DES PLAINTES</b></h2>
+						<h2><b>REGISTRE DES CONVOCATIONS</b></h2>
 					</div>
 					<div class="col-sm-6">
-						<a href="/ajouter" class="btn btn-light" style="color: #343a40" ><i class="fa fa-plus"></i><b>AJOUTER</b></a>	
+						<a href="" class="btn btn-light" style="color: #343a40" ><i class="fa fa-plus"></i><b>AJOUTER</b></a>	
                         				
 					</div>
                 </div>
@@ -31,31 +31,28 @@
             <table class="table table-striped table-hover" id="myTable">
                     <thead>
                     <tr>
-						<th>Prénom Nom</th>
-                        <th>Sexe</th>
-						<th>Contact</th>
-						<th>Objet plainte</th>
-						<th>Date depôt</th>
-						<th>Date de réglement</th>
+						<th>Prénoms & Nom Plaignant</th>
+                        <th>Employeur</th>
+						<th>Date Convocation</th>
+						<th>Date</th>
 						<th>Action</th>
                     </tr>
                 </thead>
                <tbody class="alldata">
 
-				@foreach($plaintes as $plainte)
+
                     <tr>
-						<td>{{ $plainte->prenom }} {{ $plainte->nom }}</td>
-                        <td>{{ $plainte->sexe_plaignant }}</td>
-						<td>{{ $plainte->tel_plaignant }}</td>
-						<td>{{ $plainte->objet_plainte }}</td>
-						<td>{{Carbon\Carbon::parse($plainte->updated_at)->format('d-m-Y')}}</td>
-						<td>{{Carbon\Carbon::parse($plainte->date_reglement)->format('d-m-Y')}}</td>
+						<td>Birama DIOP</td>
+                        <td>Sonatel</td>
+						<td>18/03/2024</td>
+						<td>15/03/2024</td>
 						<td>
-							<a href="/update-plainte/{{ $plainte->id }}"><i class="fa fa-edit" style="color: #d18b0b"></i></a>
-                            <a href="/delete-plainte/{{ $plainte->id }}"><i class="fa fa-trash" aria-hidden="true" style="color: #dd4040"></i></a>
+							<a href=""><i class="fa fa-edit" style="color: #d18b0b"></i></a>
+                            <a href=""><i class="fa fa-trash" aria-hidden="true" style="color: #dd4040"></i></a>
+                            <a href=""><i class="fa fa-print" aria-hidden="true" style="color: #dd4040"></i></a>
 						</td>
                     </tr>  
-				@endforeach                 					
+				
 					</tbody>                
             </table>
 			

@@ -1,18 +1,14 @@
 @extends('layout.admin')
 
 @section('page-content')
-
-        <!-- @if (session()->has('success'))
-            <div class="alert alert-success">{{ session()->get('success') }}</div>  
-        @endif -->
-
+ 
         <div class="formbold-form-wrapper mt-5 mb-5">
 
-          <div class="container">
+        <div class="container">
             @if (session()->has('success'))
               <div class="alert alert-success">{{ session()->get('success') }}</div>  
             @endif
-          </div>
+		    </div>
 
         <ul>
             @foreach ($errors->all() as $error)
@@ -20,13 +16,12 @@
             @endforeach
         </ul>
       
-      <form method="POST" action="/update/traitement" class="border rounded p-4" enctype="multipart/form-data">
+      <form method="POST" action="/ajouter/traitement" enctype="multipart/form-data">
 
         @csrf
 
         <div class="formbold-form-title">
-          <h2 class="centre">MODIFIER UNE PLAINTE</h2>
-          <input type="text" name="id" style="display: none;" value="{{ $plainte->id }}">
+          <h2 class="centre">AJOUTER UNE CONVOCATION</h2>
         </div>
   
         <!-- PRENOM ET NOM -->
@@ -37,10 +32,9 @@
             </label>
             <input
               type="text"
-              name="prenom"
+              name="prenom_req"
               id=""
               class="formbold-form-input"
-              value="{{ $plainte->prenom }}"
               required
             />
           </div>
@@ -48,10 +42,9 @@
             <label for="lastname" class="formbold-form-label"> NOM </label>
             <input
               type="text"
-              name="nom"
+              name="nom_req"
               id=""
               class="formbold-form-input"
-              value="{{ $plainte->nom }}"
               required
             />
           </div>
@@ -60,29 +53,26 @@
         <!-- GENRE ET TELEPHONE -->
         <div class="formbold-input-flex">
 
-          <div>
-              <label for="sexe_plaignant" class="formbold-form-label">SEXE</label>
-              <select class="formbold-form-input" name="sexe_plaignant" id="sexe_plaignant" required>
-                  <option value="" {{ $plainte->sexe_plaignant == '' ? 'selected' : '' }}></option>
-                  <option value="Homme" {{ $plainte->sexe_plaignant == 'Homme' ? 'selected' : '' }}>Homme</option>
-                  <option value="Femme" {{ $plainte->sexe_plaignant == 'Femme' ? 'selected' : '' }}>Femme</option>
-              </select>
-          </div>
-
-
-          <div>
-            <label for="tel_plaignant" class="formbold-form-label"> TELEPHONE </label>
-            <input
-                type="tel"
-                name="tel_plaignant"
-                id=""
-                class="formbold-form-input"
-                value="{{ $plainte->tel_plaignant }}"
-                required
-            />
+            <div>
+                <label class="formbold-form-label">SEXE</label>
+                <select class="formbold-form-input" name="sexe_req" id="" required>
+                <option value=""></option>
+                <option value="Homme">Homme</option>
+                <option value="Femme">Femme</option>
+                </select>
             </div>
 
-        </div>
+            <div>
+                <label class="formbold-form-label">SEXE</label>
+                <select class="formbold-form-input" name="qualite_req" id="" required>
+                <option value=""></option>
+                <option value="Homme">Homme</option>
+                <option value="Femme">Femme</option>
+                </select>
+            </div>
+
+            
+          </div>
 
         <!-- OBJET ET RAISON SOCIAL -->
         <div class="formbold-input-flex">
@@ -95,7 +85,6 @@
                 name="objet_plainte"
                 id="firstname"
                 class="formbold-form-input"
-                value="{{ $plainte->objet_plainte }}"
                 required
               />
             </div>
@@ -106,7 +95,6 @@
                 name="nom_entreprise"
                 id=""
                 class="formbold-form-input"
-                value="{{ $plainte->nom_entreprise }}"
                 required
               />
             </div>
@@ -123,7 +111,6 @@
                 name="secteur_activite"
                 id=""
                 class="formbold-form-input"
-                value="{{ $plainte->secteur_activite }}"
                 required
               />
             </div>
@@ -134,9 +121,8 @@
               <input
                 type="text"
                 name="fonction"
-                id=""
+                id="firstname"
                 class="formbold-form-input"
-                value="{{ $plainte->fonction }}"
                 required
               />
             </div>
@@ -146,14 +132,17 @@
         <div class="formbold-input-flex">
 
         <div>
-                <label class="formbold-form-label">Departement</label>
-                <select class="formbold-form-input" name="departement" id="" required>
-                <option value="" {{ $plainte->departement == '' ? 'selected' : '' }}></option>
-                <option value="Ziguinchor" {{ $plainte->departement == 'Ziguinchor' ? 'selected' : '' }} >Ziguinchor</option>
-                <option value="Bignona" {{ $plainte->departement == 'Bignona' ? 'selected' : '' }} >Bignona</option>
-                <option value="Oussouye" {{ $plainte->departement == 'Oussouye' ? 'selected' : '' }} >Oussouye</option>
-                </select>
-        </div>
+              <label for="" class="formbold-form-label">
+                DEPARTEMENT
+              </label>
+              <input
+                type="text"
+                name="departement"
+                id="firstname"
+                class="formbold-form-input"
+                required
+              />
+            </div>
 
             <div>
                 <label for="date_depot" class="formbold-form-label"> DATE DEPOT </label>
@@ -162,7 +151,6 @@
                 name="date_depot" 
                 id="" 
                 class="formbold-form-input"
-                value="{{ $plainte->date_depot }}"
                 required
                 />
             </div>
@@ -170,6 +158,16 @@
         
         <!-- DATE SEANCE -->
         <div class="formbold-input-flex">
+          <div>
+                <label for="date_convocation" class="formbold-form-label"> DATE CONVOCATION </label>
+                <input 
+                type="date" 
+                name="date_convocation"
+                id="dob" 
+                class="formbold-form-input"
+                required
+                />
+            </div>
 
             <div>
                 <label for="date_seance" class="formbold-form-label"> DATE SEANCE </label>
@@ -178,26 +176,13 @@
                 name="date_seance" 
                 id="" 
                 class="formbold-form-input"
-                value="{{ $plainte->date_seance }}"
-                required
-                />
-            </div>
-
-            <div>
-                <label for="date_convocation" class="formbold-form-label"> DATE DE REGLEMENT </label>
-                <input 
-                type="date" 
-                name="date_reglement"
-                id="dob" 
-                class="formbold-form-input"
-                value="{{ $plainte->date_reglement }}"
                 required
                 />
             </div>
         </div>
 
         <!-- PJ DE LA CONVOCATION -->
-        <button  type="submit" class="formbold-btn centre">METTRE A JOUR</button>
+        <button  type="submit" class="formbold-btn centre">ENREGISTRER</button>
       </form>
     </div>
   </div>
@@ -347,7 +332,7 @@
     padding: 14px 25px;
     border: none;
     font-weight: 500;
-    background-color: teal;
+    background-color: #343a40;
     color: white;
     cursor: pointer;
     margin-top: 25px;
