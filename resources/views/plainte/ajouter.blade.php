@@ -3,6 +3,10 @@
 @section('page-content')
  
         <div class="formbold-form-wrapper mt-5 mb-5">
+        
+        <div style="text-align:right;">
+          <a href="{{route('plainte')}}"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAAAXNSR0IArs4c6QAAAY5JREFUaEPtmd1NwzAUhb9OABsAE8AIbAAbwApMAhu0I8AEsAGMABMAE1AdKRZWmkT3BjuOkf3SPji+58/xlbOh8rGpHD+NQGkHmwNrd+AUuAcugeOFwb4Db8AdoP+DYypCAv9aAHgf6BdwBuj3YEwReASuFlZ9rNwTcO0l8LkC9QNmRUguuBz46c1e+o1lqj8FyrRAxoiZ6jcCzYFxBVqETAoYI7QDbo1zwzRT/dybWO3HM3AB7ta9OAGBFvjQQ2U5R3I5oLhslzgIcxBQ3m+cp75ze/xOT0kgzru3bSlOoJ/32YAmHhwUO4UDQ3lvBKx7KIUDqqUIvQBHOaTv1swWoYBZm1gkzkdIVHMOVPsajYWv+iALRPr7opoIxU7E+8JLoHgzFxOptp3+y1t1VQ7MIdIImBSYI63xGVP9VK2EEZNrWiOg6+yczZnHjg9A1/0H419fr4uxvpCUduG7U9/9gUN2icRD1++feDxPMFexkYBqDAfBq4a3P0mAK+0SjUBaPf2rNQf8mqV9onoH9icWUjF4RB4nAAAAAElFTkSuQmCC"/></a>
+        </div>
 
         <div class="container">
             @if (session()->has('success'))
