@@ -1,10 +1,5 @@
-<!--
-Bonjour {{ session('client')->prenom }}
-<a href="/logout">Deconnection</a>
-<br /> <br />
--->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <title>Accueil | IRTSS/ZIG</title>
