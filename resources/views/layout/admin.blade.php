@@ -130,13 +130,13 @@ Bonjour {{ session('client')->prenom }}
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href=" {{ route('convocation') }} " class="nav-link">
+                <a href="#" class="nav-link">
                   <i class="bi bi-arrow-right-short nav-icon"></i>
                   <p>Employeur</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/mailbox/compose.html" class="nav-link">
+                <a href="#" class="nav-link">
                   <i class="bi bi-arrow-right-short nav-icon"></i>
                   <p>Travailleur</p>
                 </a>
@@ -148,7 +148,7 @@ Bonjour {{ session('client')->prenom }}
 
           <!-- REGLEMENT LITIGE -->
         <li class="nav-item">
-            <a href="" class="nav-link">
+            <a href="#" class="nav-link">
               <i class="nav-icon bi bi-chat-right-text"></i>
               <p>
                 REGLEMENT DU LITIGE
@@ -160,7 +160,7 @@ Bonjour {{ session('client')->prenom }}
 
         <!-- TRANSMISSION DU TRIBUNAL -->
         <li class="nav-item">
-            <a href="" class="nav-link">
+            <a href="#" class="nav-link">
               <i class="nav-icon bi bi-bank"></i>
               <p>
                 TRANSMISSION AU TRIBUNAL
@@ -178,8 +178,8 @@ Bonjour {{ session('client')->prenom }}
           </a>
         </li>
       <!-- FIN BOUTTON DE DECONNEXION -->
-        </ul>
-      </nav>
+    </ul>
+  </nav>
             <!-- FIN DU SIDEBAR-->
       </aside>
 
