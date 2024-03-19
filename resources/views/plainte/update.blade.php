@@ -200,6 +200,20 @@
             </div>
         </div>
 
+        <div class="formbold-input">
+        <div>
+                <label for="pj_plainte" class="formbold-form-label"> PIECE JOINTE DE LA PLAINTE </label>
+                <input 
+                type="file" 
+                name="pj_plainte" 
+                id="" 
+                accept=".pdf,.doc,.docx,.jpg,.jpeg,.png"
+                value="{{ $plainte->pj_plainte }}"
+                class="formbold-form-input"
+                />
+            </div>
+        </div>
+
         <!-- PJ DE LA CONVOCATION -->
         <button  type="submit" class="formbold-btn centre">METTRE A JOUR</button>
       </form>

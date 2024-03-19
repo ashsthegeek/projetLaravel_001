@@ -51,6 +51,7 @@
 						<td>{{Carbon\Carbon::parse($plainte->updated_at)->format('d-m-Y')}}</td>
 						<td>{{Carbon\Carbon::parse($plainte->date_reglement)->format('d-m-Y')}}</td>
 						<td>
+							<a href="{{ asset('plaintes/' . $plainte->pj_plainte) }}" target="_blank"><i class="fa fa-eye" style="color: blue"></i></a>
 							<a href="/update-plainte/{{ $plainte->id }}"><i class="fa fa-edit" style="color: #d18b0b"></i></a>
                             <a href="/delete-plainte/{{ $plainte->id }}"><i class="fa fa-trash" aria-hidden="true" style="color: #dd4040"></i></a>
 						</td>

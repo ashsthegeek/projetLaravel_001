@@ -25,6 +25,7 @@ return new class extends Migration
             $table->date('date_depot');
             $table->date('date_seance');
             $table->date('date_reglement');
+            $table->string('pj_plainte');
             $table->timestamps();
         });
     }

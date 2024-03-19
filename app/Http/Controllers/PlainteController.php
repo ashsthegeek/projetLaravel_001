@@ -19,22 +19,31 @@ class PlainteController extends Controller
     }
 
     public function ajouter_plainte_traitement(Request $request)
-    {
-        $request->validate([
-            'prenom' => 'required',
-            'nom' => 'required',
-            'sexe_plaignant' => 'required',
-            'tel_plaignant' => 'required',
-            'objet_plainte' => 'required',
-            'nom_entreprise' => 'required',
-            'secteur_activite' => 'required',
-            'fonction' => 'required',
-            'departement' => 'required',
-            'date_depot' => 'required',
-            'date_seance' => 'required',
-            'date_reglement' => 'required',
-        ]);
+{
+    $request->validate([
+        'prenom' => 'required',
+        'nom' => 'required',
+        'sexe_plaignant' => 'required',
+        'tel_plaignant' => 'required',
+        'objet_plainte' => 'required',
+        'nom_entreprise' => 'required',
+        'secteur_activite' => 'required',
+        'fonction' => 'required',
+        'departement' => 'required',
+        'date_depot' => 'required',
+        'date_seance' => 'required',
+        'date_reglement' => 'required',
+        'pj_plainte' => 'required|file',
+    ]);
 
+    // Vérifier si un fichier est téléchargé
+    if ($request->hasFile('pj_plainte')) {
+        $file = $request->file('pj_plainte');
+        $filename = time() . '_' . $file->getClientOriginalName(); 
+        // Utilisation du nom d'origine du fichier
+        $file->move('plaintes', $filename);
+
+        // Création et sauvegarde de la plainte
         $plainte = new Plainte();
         $plainte->prenom = $request->prenom;
         $plainte->nom = $request->nom;
@@ -48,11 +57,17 @@ class PlainteController extends Controller
         $plainte->date_depot = $request->date_depot;
         $plainte->date_seance = $request->date_seance;
         $plainte->date_reglement = $request->date_reglement;
+        $plainte->pj_plainte = $filename; 
+        // Sauvegarde du nom du fichier dans la base de données
 
         $plainte->save();
 
-        return redirect('/plainte')->with('status', 'La plainte a été bien ajouté avec succés !');
+        return redirect('/plainte')->with('status', 'La plainte a été bien ajoutée avec succès !');
+            } else {
+            return redirect()->back()->with('error', 'Veuillez sélectionner un fichier.');
+            }
     }
+
 
     public function update_plainte($id)
     {
@@ -76,6 +91,7 @@ class PlainteController extends Controller
             'date_depot' => 'required',
             'date_seance' => 'required',
             'date_reglement' => 'required',
+            'pj_plainte' => 'file',
         ]);
 
         $plainte = Plainte::find($request->id);
@@ -92,10 +108,18 @@ class PlainteController extends Controller
         $plainte->date_seance = $request->date_seance;
         $plainte->date_reglement = $request->date_reglement;
 
-        $plainte->update();
+        if ($request->hasFile('pj_plainte')) {
+            $file = $request->file('pj_plainte');
+            $filename = time() . '_' . $file->getClientOriginalName();
+            $file->move('plaintes', $filename);
 
+            $plainte->pj_plainte = $filename;
+        }
+    
+        $plainte->save();
         return redirect('/plainte')->with('status', 'La plainte a été bien modifiée avec succés !');
     }
+
 
     public function delete_plainte($id)
     {

@@ -176,18 +176,16 @@
     </ul>
   </nav>
             <!-- FIN DU SIDEBAR-->
-      </aside>
-
-      
+  </aside>
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper" style="background-color:white">
 
-        @if (session('status'))
-          <p class="alert alert-success">{{ session('status') }}</p>
-        @endif
+    @if (session('status'))
+      <p class="alert alert-success">{{ session('status') }}</p>
+    @endif
 
-        @yield('page-content')
+@yield('page-content')
         
         </div>
         <!-- DEBUT DU FOOTER -->

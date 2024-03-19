@@ -183,6 +183,19 @@
             </div>
         </div>
 
+        
+        <div class="formbold-input">
+        <div>
+                <label for="date_seance" class="formbold-form-label"> PIECE JOINTE DE LA PLAINTE </label>
+                <input 
+                type="file" 
+                name="pj_plainte" 
+                id="" 
+                class="formbold-form-input"
+                />
+            </div>
+        </div>
+
         <!-- PJ DE LA CONVOCATION -->
         <button  type="submit" class="formbold-btn centre">ENREGISTRER</button>
       </form>
